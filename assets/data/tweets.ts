@@ -7,12 +7,12 @@ const tweets = [
       username: 'jlowatson',
       name: 'Jason',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://randomuser.me/api/portraits/men/68.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content: 'Just making another react native app',
     image:
-      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/thumbnail.png',
+      'https://picsum.photos/536/654',
     numberOfComments: 123,
     numberOfRetweets: 11,
     numberOfLikes: 10,
@@ -25,7 +25,7 @@ const tweets = [
       name: 'Jeff',
       username: 'bezos',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg',
+        'https://randomuser.me/api/portraits/men/88.jpg',
     },
     content:
       'Just had a great workout at the gym! 💪 #fitness #healthylifestyle',
@@ -39,13 +39,13 @@ const tweets = [
     createdAt: '2023-04-27T19:45:00.000Z',
     user: {
       id: '987654321',
-      name: 'zack',
-      username: 'zackjay',
+      name: 'ley',
+      username: 'layliz',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg',
+        'https://randomuser.me/api/portraits/women/93.jpg',
     },
     content: 'Had an amazing surf session this morning',
-    image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/8.jpg',
+    image: 'https://picsum.photos/536/754',
     numberOfComments: 10,
     numberOfRetweets: 20,
     numberOfLikes: 100,
@@ -59,7 +59,7 @@ const tweets = [
       name: 'milagros',
       username: 'milagros_idk',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/6.png',
+        'https://randomuser.me/api/portraits/women/83.jpg',
     },
     content:
       'Dont Forget, Here We Go Again, Holy Fvck and the new song called Swine',
@@ -72,16 +72,16 @@ const tweets = [
     id: 't1',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'jossevre',
+      name: 'joss',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://randomuser.me/api/portraits/men/93.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     image:
-      'https://i.insider.com/5d03aa8e6fc9201bc7002b43?width=1136&format=jpeg',
+      'https://picsum.photos/536/753',
     numberOfComments: 123,
     numberOfRetweets: 11,
     numberOfLikes: 10,
@@ -90,10 +90,10 @@ const tweets = [
     id: 't2',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'lautilen',
+      name: 'lauter',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://randomuser.me/api/portraits/men/33.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:
@@ -106,10 +106,10 @@ const tweets = [
     id: 't3',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'edroffer',
+      name: 'ed',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://randomuser.me/api/portraits/men/3.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content: 'Hello World',
@@ -121,10 +121,10 @@ const tweets = [
     id: 't4',
     user: {
       id: 'u1',
-      username: 'VadimNotJustDev',
-      name: 'Vadim',
+      username: 'camdiaz',
+      name: 'cameron',
       image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png',
+        'https://randomuser.me/api/portraits/men/53.jpg',
     },
     createdAt: '2020-08-27T12:00:00.000Z',
     content:
