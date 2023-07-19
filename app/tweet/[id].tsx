@@ -6,10 +6,13 @@ import { useSearchParams } from "expo-router";
 export default function TweetScreen() {
   const { id } = useSearchParams();
 
-  const tweet = tweets.find((t) => t.id === id);
+  const tweet = tweets.find((element) => element.id === id);
 
   if(tweet) {
     return <Tweet tweet={tweet} />;
+  }
+  else {
+    return <Text> tweet {id} not found! </Text>;
   }
 
 }
