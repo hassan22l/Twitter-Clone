@@ -1,9 +1,15 @@
-
-import {useState} from "react";
-import { Link, useRouter} from "expo-router";
-import { View, StyleSheet, Text, Image,TextInput, Pressable, SafeAreaView} from "react-native";
-import { Feather } from '@expo/vector-icons'; 
-import { useRoute } from "@react-navigation/native";
+import { useState } from "react";
+import { Link, useRouter } from "expo-router";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TextInput,
+  Pressable,
+  SafeAreaView,
+} from "react-native";
+import { Feather } from "@expo/vector-icons";
 
 const user = {
   id: "u1",
@@ -14,7 +20,7 @@ const user = {
 
 export default function NewTweet() {
   const [text, setText] = useState("");
-  const router= useRouter();
+  const router = useRouter();
 
   const onTweetPress = () => {
     console.warn("posting the tweet", text);
@@ -27,7 +33,7 @@ export default function NewTweet() {
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
           <Link href="../" style={{ fontSize: 20 }}>
-          <Feather name="x" size={25} color="black"/>
+            <Feather name="x" size={25} color="black" />
           </Link>
 
           <Pressable onPress={onTweetPress} style={styles.button}>
@@ -55,36 +61,33 @@ const styles = StyleSheet.create({
     marginTop: 15,
     padding: 10,
     flex: 1,
-    
   },
-  buttonContainer:{
+  buttonContainer: {
     flexDirection: "row",
-    marginVertical:10,
+    marginVertical: 10,
     justifyContent: "space-between",
     alignItems: "center",
   },
-  button:{
-    backgroundColor:"#1C9BF0",
+  button: {
+    backgroundColor: "#1C9BF0",
     padding: 6,
-    paddingHorizontal:20,
-    borderRadius:20,
+    paddingHorizontal: 20,
+    borderRadius: 20,
   },
 
-  buttonText:{
+  buttonText: {
     color: "white",
     fontWeight: "700",
-    fontSize:16,
+    fontSize: 16,
   },
 
   inputContainer: {
     flexDirection: "row",
-    
-    
   },
   image: {
     width: 40,
     aspectRatio: 1,
     borderRadius: 30,
-    marginRight:5,
+    marginRight: 5,
   },
 });

@@ -4,7 +4,7 @@ const tweets = [
     id: 't0',
     user: {
       id: 'u1',
-      username: 'jlowatson',
+      username: '@jlowatson',
       name: 'Jason',
       image:
         'https://randomuser.me/api/portraits/men/68.jpg',
@@ -23,7 +23,7 @@ const tweets = [
     user: {
       id: '123456789',
       name: 'Jeff',
-      username: 'bezos',
+      username: '@bezos',
       image:
         'https://randomuser.me/api/portraits/men/88.jpg',
     },
@@ -40,7 +40,7 @@ const tweets = [
     user: {
       id: '987654321',
       name: 'ley',
-      username: 'layliz',
+      username: '@layliz',
       image:
         'https://randomuser.me/api/portraits/women/93.jpg',
     },
@@ -57,7 +57,7 @@ const tweets = [
     user: {
       id: '123456789',
       name: 'milagros',
-      username: 'milagros_idk',
+      username: '@milagros_idk',
       image:
         'https://randomuser.me/api/portraits/women/83.jpg',
     },
@@ -72,7 +72,7 @@ const tweets = [
     id: 't1',
     user: {
       id: 'u1',
-      username: 'jossevre',
+      username: '@jossevre',
       name: 'joss',
       image:
         'https://randomuser.me/api/portraits/men/93.jpg',
@@ -90,7 +90,7 @@ const tweets = [
     id: 't2',
     user: {
       id: 'u1',
-      username: 'lautilen',
+      username: '@lautilen',
       name: 'lauter',
       image:
         'https://randomuser.me/api/portraits/men/33.jpg',
@@ -106,7 +106,7 @@ const tweets = [
     id: 't3',
     user: {
       id: 'u1',
-      username: 'edroffer',
+      username: '@edroffer',
       name: 'ed',
       image:
         'https://randomuser.me/api/portraits/men/3.jpg',
@@ -121,7 +121,7 @@ const tweets = [
     id: 't4',
     user: {
       id: 'u1',
-      username: 'camdiaz',
+      username: '@camdiaz',
       name: 'cameron',
       image:
         'https://randomuser.me/api/portraits/men/53.jpg',
