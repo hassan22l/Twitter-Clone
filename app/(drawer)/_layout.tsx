@@ -1,7 +1,8 @@
 import { withLayoutContext } from "expo-router";
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer";
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from "@react-navigation/drawer";
 import {Image, Text, StyleSheet, View ,ScrollView, ScrollViewProps} from "react-native"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { lazy } from "react";
 
 const DrawerNavigator = createDrawerNavigator().Navigator;
 
@@ -20,9 +21,10 @@ const user = {
 };
 
 function CustomDrawerContent(props) {
-    return (
+    return ( 
+          
       <DrawerContentScrollView style={styles.container} {...props}>
-        
+     
         <View style={styles.TopContainer}>
           <View style={{ flexDirection: "row" }}> 
                 <Image src= "https://randomuser.me/api/portraits/men/33.jpg" 
@@ -49,13 +51,15 @@ function CustomDrawerContent(props) {
         </View>
         
        </View>
+
         <DrawerItemList {...props} />
+
       </DrawerContentScrollView>
     );
 }
 
-
 const styles = StyleSheet.create({
+
   TopContainer:{
     marginBottom:10, 
     padding: 15, 
@@ -87,6 +91,7 @@ export default function DrawerLayout() {
   return (
     <Drawer drawerContent={(props) => <CustomDrawerContent {...props} />}>>
       <Drawer.Screen name="(tabs)" options={{ headerShown: false, tittle:"Home" }} />
+      <Drawer.Screen name="profile" options={{ headerShown: false, tittle:"Home" }} />
     </Drawer>
   );
 }
