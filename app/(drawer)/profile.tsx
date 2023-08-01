@@ -7,6 +7,8 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { Link } from 'expo-router';
 import { EvilIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 
 const user = {
@@ -16,12 +18,15 @@ const user = {
   image: "https://randomuser.me/api/portraits/men/68.jpg",
   following:  337 ,
   followers: 354 ,
+  followingUsers: "milagros_idk",
+  followersUsers: "latiti"
 };
 
 export default function Profile() {
   return (
     <SafeAreaView style={styles.topContainer}>
       <ScrollView>
+      
         <View
           style={{
             width: 350,
@@ -33,20 +38,29 @@ export default function Profile() {
             src="https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHJhbmRvbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
             style={styles.header}
           />
+          <View style={styles.backbuttom}>
+            <Link href="../">
+            <AntDesign name="arrowleft" size={24} color="white" />
+            </Link>
+            </View>
+
+            <View style={styles.searchButtom}>
+            <Link href="../">
+            <AntDesign name="search1" size={24} color="white" />
+            </Link>
+            </View>
+
+            <View style={styles.OptionButtom}>
+            <Link href="../">
+            <Entypo name="dots-three-vertical" size={24} color="white" />
+            </Link>
+            </View>
+
 
           <View>
             <Image
               src="https://randomuser.me/api/portraits/men/33.jpg"
-              style={{
-                position: "absolute",
-                marginTop: 100,
-                width: 80,
-                aspectRatio: 1,
-                borderRadius: 40,
-                marginLeft: 10,
-                borderWidth:3,
-                borderColor:"white"
-              }}
+              style={styles.userImage}
             />
             <Pressable style={styles.editProfile}>
               <Link href="/new-tweet" asChild>
@@ -104,7 +118,6 @@ export default function Profile() {
           }}
         >
           <Text style={{ fontSize: 15, marginLeft: 10 }}>
-           
             {user.following}
           </Text>
           <Text style={{ color: "grey" }}> Following </Text>
@@ -115,17 +128,17 @@ export default function Profile() {
           <Text style={{ color: "grey" }}> Followers</Text>
         </View>
 
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" ,borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: "lightgrey", }}>
           <Text
             style={{
               marginLeft: 10,
               fontSize: 15,
               fontWeight: "bold",
               marginTop: 5,
-              marginBottom: 20,
+              marginBottom: 10,
             }}
           >
-            
             Tweets
           </Text>
           <Text style={{ marginLeft: 20, fontSize: 15, marginTop: 5 }}>
@@ -169,17 +182,67 @@ const styles = StyleSheet.create({
     width:360,
     aspectRatio:2.5,
   },
+
+  backbuttom:{
+    marginTop:15,
+    marginLeft:10, 
+    backgroundColor: 'rgba(1, 1, 1, 0.3)',
+    width: 35, 
+    height: 35,
+    borderRadius:50, 
+    alignItems:'center', 
+    justifyContent: "center",
+  },
+
+  searchButtom:{
+    position:"absolute",
+    marginTop:15,
+    marginLeft:265, 
+    backgroundColor: 'rgba(1, 1, 1, 0.3)',
+    width: 35, 
+    height: 35,
+    borderRadius:50, 
+    alignItems:'center', 
+    justifyContent: "center",
+
+  },
+
+  OptionButtom:{
+    position:'absolute',
+    marginTop:15,
+    marginLeft:315, 
+    backgroundColor: 'rgba(1, 1, 1, 0.3)',
+    width: 35, 
+    height: 35,
+    borderRadius:50, 
+    alignItems:'center', 
+    justifyContent: "center",
+
+  },
+  userImage:{
+    position: "absolute",
+    marginTop: 55,
+    width: 80,
+    aspectRatio: 1,
+    borderRadius: 40,
+    marginLeft: 10,
+    borderWidth:3,
+    borderColor:"white"
+
+  },
   editProfile:{
 
-    backgroundColor: "transparent", borderColor:"grey", borderWidth:1,
+    backgroundColor: "transparent", 
+    borderColor:"grey", 
+    borderWidth:1,
     width: 95,
     height: 25,
     borderRadius:20,
     left:250,
-    top:150,
+    top:100,
   },
   name:{
-    marginTop:35,
+    marginTop:50,
     marginLeft:10,
     fontSize:25,
     fontWeight: "bold",
@@ -192,6 +255,7 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: "white",
+   
   },
 
 })
