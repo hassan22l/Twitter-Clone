@@ -31,10 +31,10 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           tabBarIcon: ({ color }) => (
-            <AntDesign name="home" size={25} color="black" />
+            <AntDesign name="home" size={25} color={Colors[colorScheme ?? "light"].text} />
           ),
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -57,7 +57,7 @@ export default function TabLayout() {
         name="search"
         options={{
           tabBarIcon: ({ color }) => (
-            <Feather name="search" size={25} color="black" />
+            <Feather name="search" size={25} color={Colors[colorScheme ?? "light"].text} />
           ),
         }}
       />
@@ -66,7 +66,7 @@ export default function TabLayout() {
         name="notifications"
         options={{
           tabBarIcon: ({ color }) => (
-            <Feather name="bell" size={25} color="black" />
+            <Feather name="bell" size={25} color={Colors[colorScheme ?? "light"].text} />
           ),
         }}
       />
@@ -74,7 +74,7 @@ export default function TabLayout() {
         name="chat"
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="email-outline" size={25} color="black" />
+            <MaterialCommunityIcons name="email-outline" size={25} color={Colors[colorScheme ?? "light"].text} />
           ),
         }}
       />

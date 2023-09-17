@@ -27,7 +27,6 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-    backgroundColor: "white",
   },
 
   floatingbutton: {

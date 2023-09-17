@@ -1,9 +1,11 @@
-import { View, Text, Image, StyleSheet, Pressable } from "react-native";
-
+import { View, Image, StyleSheet, Pressable, useColorScheme } from "react-native";
 import { TweetType } from "../types";
 import { Entypo } from "@expo/vector-icons";
 import IconButton from "./IconButton";
 import { Link } from "expo-router";
+import { Text } from "./Themed";
+
+
 
 type TweetProps = {
   tweet: TweetType;
@@ -50,7 +52,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: "lightgrey",
-    backgroundColor: "white",
   },
   userImage: {
     width: 50,

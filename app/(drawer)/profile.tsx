@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, FlatList, Pressable } from 'react-native'
+import { View, Image, StyleSheet, FlatList, Pressable, useWindowDimensions, useColorScheme } from 'react-native'
 import React from 'react'
 import { SafeAreaView,  } from 'react-native-safe-area-context'
 import tweets from '../../assets/data/tweets';
@@ -9,7 +9,8 @@ import { EvilIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-
+import Colors from '../../constants/Colors';
+import { Text } from '../../components/Themed';
 
 const user = {
   id: "u1",
@@ -23,10 +24,10 @@ const user = {
 };
 
 export default function Profile() {
+  const colorScheme = useColorScheme();
   return (
     <SafeAreaView style={styles.topContainer}>
       <ScrollView>
-      
         <View
           style={{
             width: 350,
@@ -40,22 +41,21 @@ export default function Profile() {
           />
           <View style={styles.backbuttom}>
             <Link href="../">
-            <AntDesign name="arrowleft" size={24} color="white" />
+              <AntDesign name="arrowleft" size={24} color={Colors[colorScheme ?? "light"].text} />
             </Link>
-            </View>
+          </View>
 
-            <View style={styles.searchButtom}>
+          <View style={styles.searchButtom}>
             <Link href="../">
-            <AntDesign name="search1" size={24} color="white" />
+              <AntDesign name="search1" size={24} color={Colors[colorScheme ?? "light"].text} />
             </Link>
-            </View>
+          </View>
 
-            <View style={styles.OptionButtom}>
+          <View style={styles.OptionButtom}>
             <Link href="../">
-            <Entypo name="dots-three-vertical" size={24} color="white" />
+              <Entypo name="dots-three-vertical" size={24} color={Colors[colorScheme ?? "light"].text} />
             </Link>
-            </View>
-
+          </View>
 
           <View>
             <Image
@@ -92,7 +92,6 @@ export default function Profile() {
             style={{ marginTop: 8, marginLeft: 10 }}
           />
           <Text style={{ textAlign: "justify", marginTop: 7, color: "grey" }}>
-            
             Born August 23, 2000
           </Text>
         </View>
@@ -104,83 +103,41 @@ export default function Profile() {
             style={{ marginTop: 8, marginLeft: 10 }}
           />
           <Text style={{ textAlign: "justify", marginTop: 5, color: "grey" }}>
-            
             Joined January 2017
           </Text>
         </View>
 
         <View
           style={{
-            backgroundColor: "white",
             marginTop: 15,
             flexDirection: "row",
-            marginBottom: 10
+            marginBottom: 10,
           }}
         >
-          <Text style={{ fontSize: 15, marginLeft: 10 }}>
-            {user.following}
-          </Text>
+          <Text style={{ fontSize: 15, marginLeft: 10 }}>{user.following}</Text>
           <Text style={{ color: "grey" }}> Following </Text>
-          <Text style={{ fontSize: 15, marginLeft: 10 }}>
-            
-            {user.followers}
-          </Text>
+          <Text style={{ fontSize: 15, marginLeft: 10 }}>{user.followers}</Text>
           <Text style={{ color: "grey" }}> Followers</Text>
         </View>
-
-        <View style={{ flexDirection: "row", justifyContent: "space-between" ,borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: "lightgrey", }}>
-          <Text
-            style={{
-              marginLeft: 10,
-              fontSize: 15,
-              fontWeight: "bold",
-              marginTop: 5,
-              marginBottom: 10,
-            }}
-          >
-            Tweets
-          </Text>
-          <Text style={{ marginLeft: 20, fontSize: 15, marginTop: 5 }}>
-            
-            Replies
-          </Text>
-          <Text style={{ marginLeft: 20, fontSize: 15, marginTop: 5 }}>
-            
-            Highlights
-          </Text>
-          <Text style={{ marginLeft: 20, fontSize: 15, marginTop: 5 }}>
-            
-            Media
-          </Text>
-          <Text style={{ marginLeft: 20, fontSize: 15, marginTop: 5 }}>
-           
-            Likes
-          </Text>
-        </View>
-
-        <View style={styles.page}>
-          <FlatList
-            data={tweets}
-            renderItem={({ item }) => <Tweet tweet={item} />}
-          />
-        </View>
+       
       </ScrollView>
     </SafeAreaView>
   );
 }
 
+
+
 const styles = StyleSheet.create({
   topContainer:{
     flex: 1, 
-    backgroundColor: "white" ,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: "lightgrey",
   },
   header:{
     position: "absolute",
-    width:360,
     aspectRatio:2.5,
+    width:"100%",
+    
   },
 
   backbuttom:{
@@ -238,8 +195,8 @@ const styles = StyleSheet.create({
     width: 95,
     height: 25,
     borderRadius:20,
-    left:250,
-    top:100,
+    left:285,
+    top:120,
   },
   name:{
     marginTop:50,

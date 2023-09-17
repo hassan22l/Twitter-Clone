@@ -3,13 +3,15 @@ import { Link, useRouter } from "expo-router";
 import {
   View,
   StyleSheet,
-  Text,
   Image,
   TextInput,
   Pressable,
   SafeAreaView,
+  useColorScheme,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import Colors from "../constants/Colors";
+import { Text } from '../components/Themed';
 
 const user = {
   id: "u1",
@@ -28,12 +30,18 @@ export default function NewTweet() {
     setText("");
     router.back();
   };
+
+  const colorScheme = useColorScheme();
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
           <Link href="../" style={{ fontSize: 20 }}>
-            <Feather name="x" size={25} color="black" />
+            <Feather
+              name="x"
+              size={25}
+              color={Colors[colorScheme ?? "light"].text}
+            />
           </Link>
 
           <Pressable onPress={onTweetPress} style={styles.button}>
@@ -46,9 +54,10 @@ export default function NewTweet() {
             value={text}
             onChangeText={setText}
             placeholder="what's happening"
+            placeholderTextColor={Colors[colorScheme ?? "light"].text}
             multiline
             numberOfLines={5}
-            style={{ flex: 1, fontSize: 18, textAlignVertical: "top" }}
+            style={{ color: "white" , flex: 1, fontSize: 18, textAlignVertical: "top",   }}
           />
         </View>
       </View>
@@ -76,7 +85,6 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    color: "white",
     fontWeight: "700",
     fontSize: 16,
   },
