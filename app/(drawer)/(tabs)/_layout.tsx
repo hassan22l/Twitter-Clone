@@ -7,6 +7,7 @@ import { DrawerActions } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '../../../constants/Colors';
+import { FontDisplay } from 'expo-font';
 
 
 function AvatarHeader (){
@@ -31,8 +32,9 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="index" 
         options={{
+          tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
             <AntDesign name="home" size={25} color={Colors[colorScheme ?? "light"].text} />
           ),
