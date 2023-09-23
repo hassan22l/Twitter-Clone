@@ -1,7 +1,11 @@
 import { withLayoutContext } from "expo-router";
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from "@react-navigation/drawer";
-import {Image, Text, StyleSheet, View ,ScrollView, ScrollViewProps} from "react-native"
+import {Image, StyleSheet, View ,ScrollView, ScrollViewProps, useColorScheme} from "react-native"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Text } from "../../components/Themed";
+import Colors from "../../constants/Colors";
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+
 
 const DrawerNavigator = createDrawerNavigator().Navigator;
 
@@ -20,6 +24,7 @@ const user = {
 };
 
 function CustomDrawerContent(props) {
+  const colorScheme = useColorScheme();
     return ( 
           
       <DrawerContentScrollView style={styles.container} {...props}>
@@ -35,7 +40,7 @@ function CustomDrawerContent(props) {
                   />
                 <MaterialCommunityIcons
                   name="dots-vertical-circle-outline" 
-                  size={24} color="black" 
+                  size={24} color={Colors[colorScheme ?? "light"].text}
                   style={{ marginLeft: "auto" }} />
           </View>
       
@@ -87,10 +92,14 @@ username:{
 
 
 export default function DrawerLayout() {
+  const colorScheme = useColorScheme();
   return (
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
     <Drawer drawerContent={(props) => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="(tabs)" options={{ headerShown: false, title:"Home" }} />
       <Drawer.Screen name="profile" options={{ headerShown: false, title:"Profile" }} />
+      <Drawer.Screen name="twitter-blue" options={{ headerShown: false, title:"twitterBlue" }} />
     </Drawer>
+    </ThemeProvider>
   );
 }

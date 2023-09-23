@@ -3,17 +3,17 @@ import { Link, Tabs, useNavigation } from 'expo-router';
 import { Pressable, useColorScheme, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { DrawerActions } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '../../../constants/Colors';
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
+
 function AvatarHeader (){
   const navigation = useNavigation();
   return(
-    <Pressable onPress={ () => navigation.openDrawer()} >
+    <Pressable onPress={ () => 
+      navigation.dispatch(DrawerActions.openDrawer())} >
     <Image src= "https://randomuser.me/api/portraits/men/33.jpg" 
     style={{ width: 40, aspectRatio: 1, borderRadius: 40, marginLeft:10}}
     />
@@ -31,7 +31,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="home"
+        name="index"
         options={{
           tabBarIcon: ({ color }) => (
             <AntDesign name="home" size={25} color={Colors[colorScheme ?? "light"].text} />
@@ -74,7 +74,7 @@ export default function TabLayout() {
         name="chat"
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="email-outline" size={25} color={Colors[colorScheme ?? "light"].text} />
+            <Ionicons name="mail-outline" size={24} color={Colors[colorScheme ?? "light"].text} />
           ),
         }}
       />

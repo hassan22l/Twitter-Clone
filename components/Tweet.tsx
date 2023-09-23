@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Pressable, useColorScheme } from "react-native";
+import { View, Image, StyleSheet, Pressable } from "react-native";
 import { TweetType } from "../types";
 import { Entypo } from "@expo/vector-icons";
 import IconButton from "./IconButton";
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 10,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: "lightgrey",
+    borderColor: "#3F3F3F",
   },
   userImage: {
     width: 50,
